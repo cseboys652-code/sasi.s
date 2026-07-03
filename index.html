@@ -1,80 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>APEC College Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Adhiparasakthi Engineering College</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-    }
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f2f2f2;
+}
 
-    .login-box {
-      background: white;
-      padding: 30px;
-      width: 320px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
+/* LOGIN */
+#login {
+    text-align: center;
+    margin-top: 80px;
+}
 
-    .logo {
-      width: 100px;
-      margin-bottom: 10px;
-    }
+.box {
+    width: 320px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
 
-    h2 {
-      margin-bottom: 20px;
-    }
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
 
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
+button {
+    width: 100%;
+    padding: 10px;
+    background: #c00000;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+button:hover {
+    background: darkred;
+}
 
-    button:hover {
-      background: #0056b3;
-    }
-  </style>
+/* HOME */
+#home {
+    display: none;
+    text-align: center;
+}
+
+header {
+    background: #c00000;
+    color: white;
+    padding: 20px;
+}
+
+.card {
+    width: 60%;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+img {
+    width: 140px;
+    margin-top: 10px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="login-box">
+<!-- LOGIN PAGE -->
+<div id="login">
 
-    <!-- LOGO (IMPORTANT PART) -->
-    <img src="apec-logo.png" alt="APEC Logo" class="logo">
+    <div class="box">
 
-    <h2>APEC College Login</h2>
+        <img src="logo.png" alt="College Logo">
 
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-    </form>
+        <h2>Adhiparasakthi Engineering College</h2>
+        <p>Melmaruvathur</p>
 
-  </div>
+        <input type="text" id="user" placeholder="Username">
+        <input type="password" id="pass" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p id="msg"></p>
+
+    </div>
+
+</div>
+
+<!-- HOME PAGE -->
+<div id="home">
+
+<header>
+    <h1>Welcome to College Portal</h1>
+    <p>Adhiparasakthi Engineering College, Melmaruvathur</p>
+</header>
+
+<img src="logo.png">
+
+<div class="card">
+    <h2>Student Dashboard</h2>
+    <p>✔ Attendance</p>
+    <p>✔ Results</p>
+    <p>✔ Department Info</p>
+</div>
+
+</div>
+
+<script>
+function login() {
+    let u = document.getElementById("user").value;
+    let p = document.getElementById("pass").value;
+
+    if(u === "admin" && p === "1234") {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("home").style.display = "block";
+    } else {
+        document.getElementById("msg").innerText = "Invalid login!";
+    }
+}
+</script>
 
 </body>
-</html>
+</html>  
